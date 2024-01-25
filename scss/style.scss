@@ -1,0 +1,625 @@
+$background-color: #fbfbfb;
+$white-color: #ffffff;
+$white-2-color: #fefefe;
+$text-color: #575757;
+$title-color: #141414;
+$primary-color: #fe8400;
+$tint-color: #ffe4c6;
+$borders-color: #c4c4c4;
+
+$font-family-montserrat: 'Montserrat', sans-serif;
+$font-family-poppins: 'Poppins', sans-serif;
+$font-family-logo: Arial Black;
+
+%font-style-headings {
+	font-family: $font-family-montserrat;
+}
+
+%font-style-body {
+	font-family: $font-family-poppins;
+}
+
+%inline-flex {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+}
+
+%column-flex {
+	@extend %inline-flex;
+	flex-direction: column;
+}
+
+%row-flex {
+	@extend %inline-flex;
+	flex-direction: row;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+a {
+	text-decoration: none;
+	color: $title-color;
+	&:hover {
+		color: $primary-color;
+	}
+	&:active {
+		color: $text-color;
+	}
+}
+
+button {
+	cursor: pointer;
+	border-radius: 0.25rem;
+	border: 1px $borders-color;
+	background: $primary-color;
+}
+
+ul {
+	list-style: none;
+}
+
+h1 {
+	@extend %font-style-headings;
+	font-size: 3rem;
+	line-height: normal;
+	font-weight: 800;
+}
+
+h2 {
+	@extend %font-style-headings;
+	font-size: 2rem;
+	line-height: normal;
+	font-weight: 500;
+}
+
+h3 {
+	@extend %font-style-headings;
+	font-size: 1.625rem;
+	line-height: normal;
+	font-weight: 500;
+}
+
+h4 {
+	@extend %font-style-headings;
+	font-size: 1.375rem;
+	line-height: normal;
+	font-weight: 500;
+}
+
+h1, h2, h3, h4 {
+	color: $title-color;
+}
+
+.body-XL {
+	@extend %font-style-body;
+	font-size: 1.5rem;
+	line-height: 2.5rem;
+	font-weight: 500;
+}
+
+.body-LG {
+	@extend %font-style-body;
+	font-size: 1.5rem;
+	line-height: 2.5rem;
+	font-weight: 400;
+}
+
+.body-MD-regular {
+	@extend %font-style-body;
+	font-size: 1.25rem;
+	line-height: normal;
+	font-weight: 400;
+}
+
+.body-MD-medium {
+	@extend %font-style-body;
+	font-size: 1.125rem;
+	line-height: normal;
+	font-weight: 500;
+}
+
+.body-SM, input, textarea {
+	@extend %font-style-body;
+	font-size: 1rem;
+	line-height: normal;
+	font-weight: 400;
+}
+
+.body-XS-medium {
+	@extend %font-style-body;
+	font-size: 0.9375rem;
+	line-height: normal;
+	font-weight: 500;
+}
+
+.body-XS-regular {
+	@extend %font-style-body;
+	font-size: 0.9375rem;
+	line-height: normal;
+	font-weight: 400;
+}
+
+.button-XL {
+	@extend %font-style-body;
+	font-size: 1.5rem;
+	line-height: normal;
+	font-weight: 400;
+}
+
+.button-LG {
+	@extend %font-style-body;
+	font-size: 1rem;
+	line-height: normal;
+	font-weight: 400;
+}
+
+.button-SM {
+	@extend %font-style-body;
+	font-size: 0.875rem;
+	line-height: normal;
+	font-weight: 400;
+}
+
+.body-XL, .body-LG, .body-MD-regular, .body-MD-medium, .body-SM, .body-XS-medium, .body-XS-regular, input, textarea {
+	color: $text-color;
+}
+
+.button-XL, .button-LG, .button-SM {
+	color: $title-color;
+}
+
+.logoTitle {
+	font-family: $font-family-logo;
+	color: $primary-color;
+}
+
+body {
+	@extend %column-flex;
+	position: relative;
+	overflow-x: hidden;
+}
+
+header {
+	@extend %row-flex;
+	width: 89.375rem;
+	position: relative;
+}
+
+.header {
+	@extend %row-flex;
+	justify-content: space-between;
+	width: 70rem;
+	padding-top: 2rem;
+	nav {
+		@extend %row-flex;
+		justify-content: space-between;
+		width: 40.1875rem;
+		button {
+			width: 9.125rem;
+			height: 2.5rem;
+		}
+	}
+	&__menu {
+		@extend %row-flex;
+		justify-content: flex-start;
+		gap: 2rem;
+		flex: 1 0 0;
+		width: 100%;
+	}
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width: 42%;
+		height: 46.375rem;
+		background: $title-color;
+		z-index: -1;
+	}
+}
+
+main {
+	@extend %column-flex;
+	gap: 5rem;
+	width: 89.375rem;
+}
+
+.hero {
+	display: inline-flex;
+	flex-direction: row;
+	width: 100%;
+	height: 46.375rem;
+	position: relative;
+	&--imgCar {
+		position: absolute;
+		width: 56.8125rem;
+		height: 34.0625rem;
+		right: 0rem;
+		top: 2rem;
+	}
+	&__content {
+		@extend %column-flex;
+		align-items: flex-start;
+		position: absolute;
+		left: 10rem;
+		top: 4.81rem;
+		width: 33rem;
+		padding: 2rem 2rem 2rem 0rem;
+		gap: 3rem;
+		background: rgba(black, 0.15);
+		&__frame {
+			@extend %column-flex;
+			align-items: flex-start;
+			gap: 1rem;
+		}
+		h1 {
+			color: $white-color;
+		}
+		.body-XL {
+			color: rgba($white-color, 0.85);
+		}
+		button {
+			width: 16rem;
+			padding: 0.75rem 1.5rem;
+		}
+	}
+	&__social {
+		@extend %column-flex;
+		position: absolute;
+		left: 4.5rem;
+		top: 11.31rem;
+		gap: 1rem;
+		&__content {
+			@extend %column-flex;
+			align-items: flex-start;
+			gap: 0.75rem;
+		}
+		&:before, &:after {
+			content: '';
+			width: 0.0625rem;
+			height: 2.375rem;
+			background: $primary-color;
+		}
+		img {
+			width: 1rem;
+			height: 1rem;
+		}
+		button {
+			background-color: transparent;
+			border: 0px solid $primary-color; 
+		}
+	}
+}
+
+.title {
+	@extend %column-flex;
+	align-items: flex-start;
+	gap: 0.5rem;
+	color: $title-color;
+	&:after {
+		content: '';
+		align-self: stretch;
+		height: 2px;
+		background-color: $primary-color;
+	}
+}
+
+.aboutUs {
+	@extend %column-flex;
+	width: 71rem;
+	gap: 2.5rem;
+	&__content {
+		@extend %row-flex;
+		align-self: stretch;
+		gap: 2rem;
+	}
+	&__textBlock {
+		@extend %column-flex;
+		align-items: flex-start;
+		gap: 1.5rem;
+	}
+	img {
+		width: 34.25rem;
+		height: 22.125rem;
+		border-radius: 0.25rem;
+	}
+	.body-XL:nth-child(2) {
+		color: $primary-color;
+	}
+}
+
+.booking {
+	@extend %column-flex;
+	gap: 2.5rem;
+	form {
+		@extend %column-flex;
+		width: 89.9375rem;
+		height: 18.625rem;
+		gap: 2rem;
+		background: $tint-color;
+		.row1, .row2 {
+			@extend %row-flex;
+			justify-content: space-between;
+			height: 3.75rem;
+			padding: 0.5rem 1rem;
+			border-radius: 0.25rem;
+			background: $background-color;
+		}
+		.row1 {
+			width: 20rem;
+		}
+		.row2 {
+			width: 13.75rem;
+		}
+		button {
+			width: 17rem;
+			height: 4.75rem;
+		}
+	}
+	&__content {
+		@extend %row-flex;
+		gap: 2.5rem;
+	}
+	&__item {
+		@extend %row-flex;
+		align-items: flex-start;
+		gap: 0.25rem;
+	}
+}
+
+.featuredCars {
+	@extend %column-flex;
+	justify-content: flex-start;
+	width: 70rem;
+	height: 35rem;
+	gap: 2.5rem;
+	&__list {
+		@extend %row-flex;
+		width: 100%;
+		height: 75%;
+		gap: 1.5rem;
+	}
+	&__item {
+		@extend %column-flex;
+		width: 30%;
+		height: 100%;
+		margin: 2.5rem 0;
+		padding: 0 1.5rem;
+		gap: 0.75rem;
+		border-radius: 0.25rem;
+		border: 1px solid $borders-color;
+		background: $white-color;
+		img {
+			width: 19.96875rem;
+			height: 11.4375rem;
+			border-radius: 0.208rem;
+		}
+	}
+	&__content {
+		@extend %column-flex;
+		align-items: flex-start;
+		width: 19.6875rem;
+		gap: 2.5rem;
+	}
+	&__information {
+		@extend %column-flex;
+		align-items: flex-start;
+		gap: 0.75rem;
+	}
+	&__specs {
+		@extend %row-flex;
+		gap: 1rem;
+	}
+	&__spec {
+		@extend %row-flex;
+		gap: 0.25rem;
+		img {
+			width: 1rem;
+			height: 1rem;
+		}
+	}
+	&__book {
+		@extend %row-flex;
+		justify-content: space-between;
+		width: 19.6875rem;
+		button {
+			width: 6.625rem;
+			height: 2.1875rem;
+		}
+	}
+	&__bullets {
+		@extend %row-flex;
+		align-items: flex-start;
+		gap: 0.5rem;
+	}
+}
+
+.services {
+	@extend %column-flex;
+	position: relative;
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0px;
+		z-index: -1;
+		width: 89.9375rem;
+		height: 24.6875rem;
+		background-color: $title-color;
+	}
+	.title {
+		margin-top: 2.88rem;
+	}
+	.body-MD-medium {
+		width: 33rem;
+		color: rgba($white-color, 0.85);
+		font-weight: 400;
+		margin-top: 1.5rem;
+		line-height: 2rem;
+		text-align: center;
+	}
+	.body-XS-regular {
+		text-align: center;
+		width: 9.19rem;
+	}
+	.body-XS-regular:nth-child(3) {
+		width: 12.19rem;
+	}
+	.title {
+		color: $white-color;
+	}
+	&__content {
+		@extend %row-flex;
+		align-items: flex-start;
+		margin-top: 2.5rem;
+		gap: 3.5rem;
+	}
+	&__item {
+		@extend %column-flex;
+		width: 17.3125rem;
+		height: 20.125rem;
+		gap: 1.125rem;
+		border-radius: 0.25rem;
+		background: $white-color;
+		box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.1);
+	}
+}
+
+.reviews {
+	@extend %column-flex;
+	gap: 2.5rem;
+	&--pointer{
+		cursor: pointer;
+	}
+	&--resize {
+		width: 4rem;
+		height: 4rem;
+	}
+	&--flip {
+		transform: scaleX(-1);
+	}
+	&__content {
+		@extend %row-flex;
+		gap: 1.9375rem;
+	}
+	&__list {
+		@extend %row-flex;
+		gap: 1.5rem;
+	}
+	&__item {
+		@extend %column-flex;
+		width: 28.3125rem;
+		height: 26.0625rem;
+		gap: 1.5rem;
+		border-radius: 0.25rem;
+		border: 1px solid $borders-color;
+		.body-MD-regular {
+			text-align: center;
+			width: 25rem;
+		}
+		img {
+			cursor: default;
+		}
+	}
+}
+
+.stats {
+	@extend %row-flex;
+	align-items: stretch;
+	width: 100%;
+	padding: 4rem 0rem;
+	gap: 10rem;
+	background: $tint-color;
+	h2 {
+		font-size: 2.5rem;
+	}
+	&__item {
+		text-align: center;
+	}
+}
+
+.contactUs {
+	@extend %column-flex;
+	gap: 2.5rem;
+	&__content {
+		@extend %row-flex;
+		padding: 2.5rem 3.5rem;
+		gap: 5.4375rem;
+		border-radius: 0.25rem;
+		background: $white-color;
+		box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.05);
+		form {
+			@extend %column-flex;
+			align-items: flex-start;
+			gap: 2.5rem;
+			button {
+				width: 16rem;
+				padding: 0.75rem 1.5rem;
+			}
+		}
+	}
+	&__inputs {
+		@extend %column-flex;
+		gap: 1.5rem;
+		input, textarea {
+			width: 25.3125rem;
+			height: 3.75rem;
+			padding: 0.5rem 1rem;
+			border-radius: 0.25rem;
+			border: 1px solid $borders-color;
+			background: $background-color;
+		}
+		textarea {
+			position: relative;
+			height: 7.625rem;
+		}
+	}
+	&:after {
+		content: '';
+		position: absolute;
+		left: 15rem;
+		margin-top: 36rem;
+		z-index: -1;
+		width: 90rem;
+		height: 32.75rem;
+		background: $title-color;
+	}
+}
+
+.footer {
+	@extend %column-flex;
+	width: 100vw;
+	margin-top: 2.5rem;
+	gap: 5rem;
+	&__contacts {
+		@extend %row-flex;
+		gap: 0.5rem;
+	}
+	.body-MD-regular:nth-child(1) {
+		color: $white-color;
+	}
+	.body-MD-regular:nth-child(2) {
+		color: $primary-color;
+	}
+	&__menu {
+		@extend %row-flex;
+		justify-content: space-between;
+		width: 69.875rem;
+	}
+	&__social {
+		@extend %row-flex;
+		gap: 1.5rem;
+		img {
+			width: 1.5rem;
+			height: 1.5rem;
+			cursor: pointer;
+		}
+	}
+}
