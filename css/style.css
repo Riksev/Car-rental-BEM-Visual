@@ -32,9 +32,11 @@ html {
 a {
   text-decoration: none;
   color: #141414;
+  transition-duration: 0.75s;
 }
 a:hover {
   color: #fe8400;
+  transition-duration: 0.75s;
 }
 a:active {
   color: #575757;
@@ -45,6 +47,20 @@ button {
   border-radius: 0.25rem;
   border: 1px #c4c4c4;
   background: #fe8400;
+  transition-duration: 1s;
+}
+
+.--socialIcons {
+  transition-duration: 1s;
+}
+.--socialIcons:hover {
+  transition-duration: 1s;
+  filter: sepia(120%) contrast(160%);
+}
+
+button:hover {
+  background: yellow;
+  transition-duration: 1s;
 }
 
 ul {
@@ -210,6 +226,12 @@ main {
   height: 34.0625rem;
   right: 0rem;
   top: 2rem;
+  transition-duration: 1s;
+}
+.hero--imgCar:hover {
+  width: 58rem;
+  height: 36rem;
+  transition-duration: 1s;
 }
 .hero__content {
   align-items: flex-start;
