@@ -69,6 +69,8 @@ button {
 	transition-duration: 1s;
 	&:hover {
 		transition-duration: 1s;
+		width: 2rem;
+		height: 2rem;
 		filter: sepia(120%) contrast(160%);
 	}
 }
@@ -209,6 +211,15 @@ header {
 	position: relative;
 }
 
+@keyframes rectangle-anim {
+	0%{
+		left: -10rem;
+	}
+	100%{
+		left: 0px;
+	}
+}
+
 .header {
 	@extend %row-flex;
 	justify-content: space-between;
@@ -234,11 +245,13 @@ header {
 		content: '';
 		position: absolute;
 		top: 0px;
-		left: 0px;
 		width: 42%;
 		height: 46.375rem;
 		background: $title-color;
 		z-index: -1;
+		animation-name: rectangle-anim;
+		animation-duration: 1s;
+		animation-fill-mode: forwards;
 	}
 }
 
@@ -246,6 +259,15 @@ main {
 	@extend %column-flex;
 	gap: 5rem;
 	width: 89.375rem;
+}
+
+@keyframes img-car {
+	0%{
+		right: -10rem;
+	}
+	100%{
+		right: 0rem;
+	}
 }
 
 .hero {
@@ -258,7 +280,6 @@ main {
 		position: absolute;
 		width: 56.8125rem;
 		height: 34.0625rem;
-		right: 0rem;
 		top: 2rem;
 		transition-duration: 1s;
 		&:hover {
@@ -266,6 +287,9 @@ main {
 			height: 36rem;
 			transition-duration: 1s;
 		}
+		animation-name: img-car;
+		animation-duration: 1s;
+		animation-fill-mode: forwards;
 	}
 	&__content {
 		@extend %column-flex;
@@ -301,7 +325,7 @@ main {
 		gap: 1rem;
 		&__content {
 			@extend %column-flex;
-			align-items: flex-start;
+			align-items: center;
 			gap: 0.75rem;
 		}
 		&:before, &:after {
@@ -321,16 +345,38 @@ main {
 	}
 }
 
+@keyframes title-anim {
+	0%{
+		opacity: 0.0;
+	}
+	100%{
+		opacity: 1.0;
+	}
+}
+
 .title {
 	@extend %column-flex;
 	align-items: flex-start;
 	gap: 0.5rem;
 	color: $title-color;
+	animation-name: title-anim;
+	animation-duration: 2s;
 	&::after {
 		content: '';
 		align-self: stretch;
 		height: 2px;
 		background-color: $primary-color;
+	}
+}
+
+@keyframes img-aboutUs {
+	0%{
+		width: 0rem;
+		height: 0rem;
+	}
+	100%{
+		width: 34.25rem;
+		height: 22.125rem;
 	}
 }
 
@@ -349,9 +395,10 @@ main {
 		gap: 1.5rem;
 	}
 	img {
-		width: 34.25rem;
-		height: 22.125rem;
 		border-radius: 0.25rem;
+		animation-name: img-aboutUs;
+		animation-duration: 1s;
+		animation-fill-mode: forwards;
 	}
 	.body-XL:nth-child(2) {
 		color: $primary-color;

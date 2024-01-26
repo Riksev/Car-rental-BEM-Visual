@@ -55,6 +55,8 @@ button {
 }
 .--socialIcons:hover {
   transition-duration: 1s;
+  width: 2rem;
+  height: 2rem;
   filter: sepia(120%) contrast(160%);
 }
 
@@ -178,6 +180,14 @@ header {
   position: relative;
 }
 
+@keyframes rectangle-anim {
+  0% {
+    left: -10rem;
+  }
+  100% {
+    left: 0px;
+  }
+}
 .header {
   justify-content: space-between;
   width: 70rem;
@@ -201,11 +211,13 @@ header {
   content: '';
   position: absolute;
   top: 0px;
-  left: 0px;
   width: 42%;
   height: 46.375rem;
   background: #141414;
   z-index: -1;
+  animation-name: rectangle-anim;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
 
 main {
@@ -213,6 +225,14 @@ main {
   width: 89.375rem;
 }
 
+@keyframes img-car {
+  0% {
+    right: -10rem;
+  }
+  100% {
+    right: 0rem;
+  }
+}
 .hero {
   display: inline-flex;
   flex-direction: row;
@@ -224,9 +244,11 @@ main {
   position: absolute;
   width: 56.8125rem;
   height: 34.0625rem;
-  right: 0rem;
   top: 2rem;
   transition-duration: 1s;
+  animation-name: img-car;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
 .hero--imgCar:hover {
   width: 58rem;
@@ -264,7 +286,7 @@ main {
   gap: 1rem;
 }
 .hero__social__content {
-  align-items: flex-start;
+  align-items: center;
   gap: 0.75rem;
 }
 .hero__social:before, .hero__social:after {
@@ -282,10 +304,20 @@ main {
   border: 0px solid #fe8400;
 }
 
+@keyframes title-anim {
+  0% {
+    opacity: 0.0;
+  }
+  100% {
+    opacity: 1.0;
+  }
+}
 .title {
   align-items: flex-start;
   gap: 0.5rem;
   color: #141414;
+  animation-name: title-anim;
+  animation-duration: 2s;
 }
 .title::after {
   content: '';
@@ -294,6 +326,16 @@ main {
   background-color: #fe8400;
 }
 
+@keyframes img-aboutUs {
+  0% {
+    width: 0rem;
+    height: 0rem;
+  }
+  100% {
+    width: 34.25rem;
+    height: 22.125rem;
+  }
+}
 .aboutUs {
   width: 71rem;
   gap: 2.5rem;
@@ -307,9 +349,10 @@ main {
   gap: 1.5rem;
 }
 .aboutUs img {
-  width: 34.25rem;
-  height: 22.125rem;
   border-radius: 0.25rem;
+  animation-name: img-aboutUs;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
 .aboutUs .body-XL:nth-child(2) {
   color: #fe8400;
