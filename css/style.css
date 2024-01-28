@@ -659,10 +659,10 @@ main {
   }
 }
 .featuredCars__item {
-  width: 30%;
+  width: 70%;
   height: 100%;
   margin: 2.5rem 0;
-  padding: 0 1.5rem;
+  padding: 1rem 1.5rem;
   gap: 0.75rem;
   border-radius: 0.25rem;
   border: 1px solid #c4c4c4;
@@ -891,9 +891,10 @@ main {
   height: 60vh;
   background: #141414;
 }
-@media (max-width: 1200px) {
+@media (max-width: 1200px), (orientation: portrait) {
   .contactUs::after {
-    height: 120vh;
+    margin-top: 50rem;
+    height: 100vh;
   }
 }
 
@@ -906,7 +907,7 @@ main {
   gap: 0.5rem;
   text-align: center;
 }
-@media (max-width: 565px) {
+@media (max-width: 768px) {
   .footer__contacts {
     flex-direction: column;
   }
@@ -920,6 +921,11 @@ main {
 .footer__menu {
   justify-content: space-between;
   width: 80%;
+}
+@media (orientation: portrait) {
+  .footer__menu {
+    flex-direction: column;
+  }
 }
 .footer__social {
   gap: 1.5rem;
