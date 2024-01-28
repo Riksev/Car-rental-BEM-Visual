@@ -14,286 +14,300 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&family=Poppins:wght@400;500&display=swap">
 		<link rel="stylesheet" href="css/style.css">
+		<script src="js/script.js"></script>
 	</head>
 	<body>
-		<header>
-			<div class="header">
+		<div class="container">
+			<header>
 				<a href="#home"><h3 class="logoTitle">CARENT</h3></a>
 				<nav>
-					<div class="header__menu">
-						<a class="body-SM" href="#home">Home</a>
-						<a class="body-SM" href="#about_us">About</a>
-						<a class="body-SM" href="#booking">Booking</a>
-						<a class="body-SM" href="#cars">Cars</a>
-						<a class="body-SM" href="#contacts">Contacts</a>
+					<div class="header__horizontalMenu">
+						<div class="header__menu">
+							<a class="body-SM" href="#home">Home</a>
+							<a class="body-SM" href="#about_us">About</a>
+							<a class="body-SM" href="#booking">Booking</a>
+							<a class="body-SM" href="#cars">Cars</a>
+							<a class="body-SM" href="#contacts">Contacts</a>
+						</div>
+						<button class="button-LG">Login | Sign up</button>
 					</div>
-					<button class="button-LG">Login | Sign up</button>
+					<div class="header__verticalMenu">
+						<a class="body-SM" href="#home" onclick="burgerMenu()">Home</a>
+						<a class="body-SM" href="#about_us" onclick="burgerMenu()">About</a>
+						<a class="body-SM" href="#booking" onclick="burgerMenu()">Booking</a>
+						<a class="body-SM" href="#cars" onclick="burgerMenu()">Cars</a>
+						<a class="body-SM" href="#contacts" onclick="burgerMenu()">Contacts</a>
+						<a class="body-SM" href="#home" onclick="burgerMenu()">Login | Sign up</a>
+					</div>
+					<div class="header__burger" onclick="burgerMenu()">
+						<span></span>
+					</div>
 				</nav>
-			</div>
-		</header>
-		<main>
-			<section class="hero" id="home">
-				<img src="img/hero/main.jpg" alt="Car" class="hero--imgCar">
-				<div class="hero__content">
-					<div class="hero__content__frame">
-						<h1>Enjoy your life with our comfortable cars.</h1>
-						<div class="body-XL">Carent, is ready to serve the best expirience in car rental.</div>
-					</div>
-					<button class="button-XL">Explore Now</button>
-				</div>
-				<div class="hero__social">
-					<div class="hero__social__content">
-						<button><img src="img/facebook.png" class="--socialIcons"></button>
-						<button><img src="img/instagram.png" class="--socialIcons"></button>
-						<button><img src="img/twitter.png" class="--socialIcons"></button>
-						<button><img src="img/viber.png" class="--socialIcons"></button>
-						<button><img src="img/telegram.png" class="--socialIcons"></button>
-					</div>
-				</div>
-			</section>
-			<section class="aboutUs" id="about_us">
-				<h2 class="title">About us</h2>
-				<div class="aboutUs__content">
-					<img src="img/aboutUs/about_us.jpg">
-					<div class="aboutUs__textBlock">
-						<div class="body-XL">We are a specialized team committed to providing reliable car rental services. One of the advantages of renting a car from us is offering competitive and transparent prices. By providing services such as comprehensive insurance ......</div>
-						<a href="#" class="body-XL">Read More</a>
-					</div>
-				</div>
-			</section>
-			<section class="booking" id="booking">
-				<h2 class="title">Book Now</h2>
-				<form action="">
-					<div class="booking__content">
-						<div class="row1">
-							<div class="booking__item">
-								<img src="img/location.png" alt="Pickup Location">
-								<div class="body-SM">Pickup Location</div>
-							</div>
-							<a href="#booking"><img src="img/chevron.png" alt="Chevron"></a>
+			</header>
+			<main>
+				<section class="hero" id="home">
+					<img src="img/hero/main.jpg" alt="Car" class="hero--imgCar">
+					<div class="hero__content">
+						<div class="hero__content__frame">
+							<h1>Enjoy your life with our comfortable cars.</h1>
+							<div class="body-XL">Carent, is ready to serve the best expirience in car rental.</div>
 						</div>
-						<div class="row1">
-							<div class="booking__item">
-								<img src="img/calendar.png" alt="Pickup Date">
-								<div class="body-SM">Pickup Date</div>
-							</div>
-							<a href="#booking"><img src="img/chevron.png" alt="Chevron"></a>
-						</div>
-						<div class="row1">
-							<div class="booking__item">
-								<img src="img/calendar.png" alt="Return Date">
-								<div class="body-SM">Return Date</div>
-							</div>
-							<a href="#booking"><img src="img/chevron.png" alt="Chevron"></a>
+						<button class="button-XL">Explore Now</button>
+					</div>
+					<div class="hero__social">
+						<div class="hero__social__content">
+							<button><img src="img/facebook.png" class="--socialIcons"></button>
+							<button><img src="img/instagram.png" class="--socialIcons"></button>
+							<button><img src="img/twitter.png" class="--socialIcons"></button>
+							<button><img src="img/viber.png" class="--socialIcons"></button>
+							<button><img src="img/telegram.png" class="--socialIcons"></button>
 						</div>
 					</div>
-					<div class="booking__content">
-						<div class="row2">
-							<div class="booking__item">
-								<img src="img/car.png" alt="Car Type">
-								<div class="body-SM">Car Type</div>
-							</div>
-							<a href="#booking"><img src="img/chevron.png" alt="Chevron"></a>
-						</div>
-						<div class="row2">
-							<div class="booking__item">
-								<img src="img/clock.png" alt="Pickup Time">
-								<div class="body-SM">Pickup Time</div>
-							</div>
-							<a href="#booking"><img src="img/chevron.png" alt="Chevron"></a>
-						</div>
-						<div class="row2">
-							<div class="booking__item">
-								<img src="img/clock.png" alt="Return Time">
-								<div class="body-SM">Return Time</div>
-							</div>
-							<a href="#booking"><img src="img/chevron.png" alt="Chevron"></a>
-						</div>
-						<button class="button-XL">Book Now</button>
-					</div>
-				</form>
-			</section>
-			<section class="featuredCars" id="cars">
-				<h2 class="title">Our Featured Cars</h2>
-				<div class="featuredCars__list">
-					<div class="featuredCars__item">
-						<img src="img/feturedCars/car1.jpg" alt="car">
-						<div class="featuredCars__content">
-							<div class="featuredCars__information">
-								<div class="body-MD-medium">Jeep XD</div>
-								<div class="featuredCars__specs">
-									<div class="featuredCars__spec">
-										<img src="img/frame.png" alt="persons">
-										<div class="body-XS-medium">5</div>
-									</div>
-									<div class="featuredCars__spec">
-										<img src="img/gas-station.png" alt="persons">
-										<div class="body-XS-medium">Gasoline</div>
-									</div>
-									<div class="featuredCars__spec">
-										<img src="img/car.png" alt="persons">
-										<div class="body-XS-medium">SUV</div>
-									</div>
-								</div>
-							</div>
-							<div class="featuredCars__book">
-								<div class="featuredCars__price">
-									<div class="body-SM">Daily rate from</div>
-									<div class="body-MD-medium">$200</div>
-								</div>
-								<button class="button-SM">Book Now</button>
-							</div>
+				</section>
+				<section class="aboutUs" id="about_us">
+					<h2 class="title">About us</h2>
+					<div class="aboutUs__content">
+						<img src="img/aboutUs/about_us.jpg">
+						<div class="aboutUs__textBlock">
+							<div class="body-XL">We are a specialized team committed to providing reliable car rental services. One of the advantages of renting a car from us is offering competitive and transparent prices. By providing services such as comprehensive insurance ......</div>
+							<a href="#" class="body-XL">Read More</a>
 						</div>
 					</div>
-					<div class="featuredCars__item">
-						<img src="img/feturedCars/car2.jpg" alt="car">
-						<div class="featuredCars__content">
-							<div class="featuredCars__information">
-								<div class="body-MD-medium">Ferrari Enzo</div>
-								<div class="featuredCars__specs">
-									<div class="featuredCars__spec">
-										<img src="img/frame.png" alt="persons">
-										<div class="body-XS-medium">2</div>
-									</div>
-									<div class="featuredCars__spec">
-										<img src="img/gas-station.png" alt="persons">
-										<div class="body-XS-medium">Electric</div>
-									</div>
-									<div class="featuredCars__spec">
-										<img src="img/car.png" alt="persons">
-										<div class="body-XS-medium">Sedan</div>
-									</div>
-								</div>
-							</div>
-							<div class="featuredCars__book">
-								<div class="featuredCars__price">
-									<div class="body-SM">Daily rate from</div>
-									<div class="body-MD-medium">$340</div>
-								</div>
-								<button class="button-SM">Book Now</button>
-							</div>
-						</div>
-					</div>
-					<div class="featuredCars__item">
-						<img src="img/feturedCars/car3.jpg" alt="car">
-						<div class="featuredCars__content">
-							<div class="featuredCars__information">
-								<div class="body-MD-medium">Fiat Cope'</div>
-								<div class="featuredCars__specs">
-									<div class="featuredCars__spec">
-										<img src="img/frame.png" alt="persons">
-										<div class="body-XS-medium">4</div>
-									</div>
-									<div class="featuredCars__spec">
-										<img src="img/gas-station.png" alt="persons">
-										<div class="body-XS-medium">Gasoline</div>
-									</div>
-									<div class="featuredCars__spec">
-										<img src="img/car.png" alt="persons">
-										<div class="body-XS-medium">Mini coupe</div>
-									</div>
-								</div>
-							</div>
-							<div class="featuredCars__book">
-								<div class="featuredCars__price">
-									<div class="body-SM">Daily rate from</div>
-									<div class="body-MD-medium">$167</div>
-								</div>
-								<button class="button-SM">Book Now</button>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="featuredCars__bullets">
-						<img src="img/bullet-active.png" alt="bullet-active">
-						<img src="img/bullet-off.png" alt="bullet-off">
-						<img src="img/bullet-off.png" alt="bullet-off">
-				</div>
-			</section>
-			<section class="services">
-				<h2 class="title">Our Premium Services</h2>
-				<div class="body-MD-medium">Carent is a reputable car rental company that offers a wide range of useful services for every taste.</div>
-				<div class="services__content">
-					<div class="services__item">
-						<img src="img/refresh-right-square.png" alt="Refresh">
-						<h4>24 Hours Support</h4>
-						<div class="body-XS-regular">We support you all hours of the day.</div>
-					</div>
-					<div class="services__item">
-						<img src="img/medal-star.png" alt="Medal star">
-						<h4>Qualified Assurance</h4>
-						<div class="body-XS-regular">All cars have a valid insurance.</div>
-					</div>
-					<div class="services__item">
-						<img src="img/gps.png" alt="GPS">
-						<h4>GPS on Cars</h4>
-						<div class="body-XS-regular">All cars are equipped with GPS navigation system.</div>
-					</div>
-				</div>
-			</section>
-			<section class="reviews">
-				<h2 class="title">What Our Clients Say?</h2>
-				<div class="reviews__content">
-					<img src="img/arrow.png" alt="Arrow left" class="reviews--flip reviews--resize reviews--pointer --socialIcons">
-					<div class="reviews__list">
-						<div class="reviews__item">
-							<img src="img/reviews/1.png" alt="Kristin Watson">
-							<h3>Kristin Watson</h3>
-							<div class="body-MD-regular">I rented a car for a one-week trip from Carnet on the recommendation of my friend. Actually, I am satisfied with them.</div>
-						</div>
-						<div class="reviews__item">
-							<img src="img/reviews/2.png" alt="Robert Fox">
-							<h3>Robert Fox</h3>
-							<div class="body-MD-regular">During my last trip, I used a Carent sport car. The car was completely clean and had enough gas.</div>
-						</div>
-					</div>
-					<img src="img/arrow.png" alt="Arrow right" class="reviews--resize reviews--pointer --socialIcons">
-				</div>
-			</section>
-			<section class="stats">
-				<div class="stats__item">
-					<h2>450+</h2>
-					<div class="body-LG">Cars For Rent</div>
-				</div>
-				<div class="stats__item">
-					<h2>800+</h2>
-					<div class="body-LG">Happy Clients</div>
-				</div>
-				<div class="stats__item">
-					<h2>750+</h2>
-					<div class="body-LG">Rental Locations</div>
-				</div>
-			</section>
-			<section class="contactUs" id="contacts">
-				<h2 class="title">Contact Us</h2>
-				<div class="contactUs__content">
+				</section>
+				<section class="booking" id="booking">
+					<h2 class="title">Book Now</h2>
 					<form action="">
-						<div class="contactUs__inputs">
+						<div class="booking__content">
+							<div class="row1">
+								<div class="booking__item">
+									<img src="img/location.png" alt="Pickup Location">
+									<div class="body-SM">Pickup Location</div>
+								</div>
+								<a href="#booking"><img src="img/chevron.png" alt="Chevron"></a>
+							</div>
+							<div class="row1">
+								<div class="booking__item">
+									<img src="img/calendar.png" alt="Pickup Date">
+									<div class="body-SM">Pickup Date</div>
+								</div>
+								<a href="#booking"><img src="img/chevron.png" alt="Chevron"></a>
+							</div>
+							<div class="row1">
+								<div class="booking__item">
+									<img src="img/calendar.png" alt="Return Date">
+									<div class="body-SM">Return Date</div>
+								</div>
+								<a href="#booking"><img src="img/chevron.png" alt="Chevron"></a>
+							</div>
+						</div>
+						<div class="booking__content">
+							<div class="row2">
+								<div class="booking__item">
+									<img src="img/car.png" alt="Car Type">
+									<div class="body-SM">Car Type</div>
+								</div>
+								<a href="#booking"><img src="img/chevron.png" alt="Chevron"></a>
+							</div>
+							<div class="row2">
+								<div class="booking__item">
+									<img src="img/clock.png" alt="Pickup Time">
+									<div class="body-SM">Pickup Time</div>
+								</div>
+								<a href="#booking"><img src="img/chevron.png" alt="Chevron"></a>
+							</div>
+							<div class="row2">
+								<div class="booking__item">
+									<img src="img/clock.png" alt="Return Time">
+									<div class="body-SM">Return Time</div>
+								</div>
+								<a href="#booking"><img src="img/chevron.png" alt="Chevron"></a>
+							</div>
+							<button class="button-XL">Book Now</button>
+						</div>
+					</form>
+				</section>
+				<section class="featuredCars" id="cars">
+					<h2 class="title">Our Featured Cars</h2>
+					<div class="featuredCars__list">
+						<div class="featuredCars__item">
+							<img src="img/feturedCars/car1.jpg" alt="car">
+							<div class="featuredCars__content">
+								<div class="featuredCars__information">
+									<div class="body-MD-medium">Jeep XD</div>
+									<div class="featuredCars__specs">
+										<div class="featuredCars__spec">
+											<img src="img/frame.png" alt="persons">
+											<div class="body-XS-medium">5</div>
+										</div>
+										<div class="featuredCars__spec">
+											<img src="img/gas-station.png" alt="persons">
+											<div class="body-XS-medium">Gasoline</div>
+										</div>
+										<div class="featuredCars__spec">
+											<img src="img/car.png" alt="persons">
+											<div class="body-XS-medium">SUV</div>
+										</div>
+									</div>
+								</div>
+								<div class="featuredCars__book">
+									<div class="featuredCars__price">
+										<div class="body-SM">Daily rate from</div>
+										<div class="body-MD-medium">$200</div>
+									</div>
+									<button class="button-SM">Book Now</button>
+								</div>
+							</div>
+						</div>
+						<div class="featuredCars__item">
+							<img src="img/feturedCars/car2.jpg" alt="car">
+							<div class="featuredCars__content">
+								<div class="featuredCars__information">
+									<div class="body-MD-medium">Ferrari Enzo</div>
+									<div class="featuredCars__specs">
+										<div class="featuredCars__spec">
+											<img src="img/frame.png" alt="persons">
+											<div class="body-XS-medium">2</div>
+										</div>
+										<div class="featuredCars__spec">
+											<img src="img/gas-station.png" alt="persons">
+											<div class="body-XS-medium">Electric</div>
+										</div>
+										<div class="featuredCars__spec">
+											<img src="img/car.png" alt="persons">
+											<div class="body-XS-medium">Sedan</div>
+										</div>
+									</div>
+								</div>
+								<div class="featuredCars__book">
+									<div class="featuredCars__price">
+										<div class="body-SM">Daily rate from</div>
+										<div class="body-MD-medium">$340</div>
+									</div>
+									<button class="button-SM">Book Now</button>
+								</div>
+							</div>
+						</div>
+						<div class="featuredCars__item">
+							<img src="img/feturedCars/car3.jpg" alt="car">
+							<div class="featuredCars__content">
+								<div class="featuredCars__information">
+									<div class="body-MD-medium">Fiat Cope'</div>
+									<div class="featuredCars__specs">
+										<div class="featuredCars__spec">
+											<img src="img/frame.png" alt="persons">
+											<div class="body-XS-medium">4</div>
+										</div>
+										<div class="featuredCars__spec">
+											<img src="img/gas-station.png" alt="persons">
+											<div class="body-XS-medium">Gasoline</div>
+										</div>
+										<div class="featuredCars__spec">
+											<img src="img/car.png" alt="persons">
+											<div class="body-XS-medium">Mini coupe</div>
+										</div>
+									</div>
+								</div>
+								<div class="featuredCars__book">
+									<div class="featuredCars__price">
+										<div class="body-SM">Daily rate from</div>
+										<div class="body-MD-medium">$167</div>
+									</div>
+									<button class="button-SM">Book Now</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="featuredCars__bullets">
+							<img src="img/bullet-active.png" alt="bullet-active">
+							<img src="img/bullet-off.png" alt="bullet-off">
+							<img src="img/bullet-off.png" alt="bullet-off">
+					</div>
+				</section>
+				<section class="services">
+					<h2 class="title">Our Premium Services</h2>
+					<div class="body-MD-medium">Carent is a reputable car rental company that offers a wide range of useful services for every taste.</div>
+					<div class="services__content">
+						<div class="services__item">
+							<img src="img/refresh-right-square.png" alt="Refresh">
+							<h4>24 Hours Support</h4>
+							<div class="body-XS-regular">We support you all hours of the day.</div>
+						</div>
+						<div class="services__item">
+							<img src="img/medal-star.png" alt="Medal star">
+							<h4>Qualified Assurance</h4>
+							<div class="body-XS-regular">All cars have a valid insurance.</div>
+						</div>
+						<div class="services__item">
+							<img src="img/gps.png" alt="GPS">
+							<h4>GPS on Cars</h4>
+							<div class="body-XS-regular">All cars are equipped with GPS navigation system.</div>
+						</div>
+					</div>
+				</section>
+				<section class="reviews">
+					<h2 class="title">What Our Clients Say?</h2>
+					<div class="reviews__content">
+						<img src="img/arrow.png" alt="Arrow left" class="reviews--flip reviews--resize reviews--pointer --socialIcons">
+						<div class="reviews__list">
+							<div class="reviews__item">
+								<img src="img/reviews/1.png" alt="Kristin Watson">
+								<h3>Kristin Watson</h3>
+								<div class="body-MD-regular">I rented a car for a one-week trip from Carnet on the recommendation of my friend. Actually, I am satisfied with them.</div>
+							</div>
+							<div class="reviews__item">
+								<img src="img/reviews/2.png" alt="Robert Fox">
+								<h3>Robert Fox</h3>
+								<div class="body-MD-regular">During my last trip, I used a Carent sport car. The car was completely clean and had enough gas.</div>
+							</div>
+						</div>
+						<img src="img/arrow.png" alt="Arrow right" class="reviews--resize reviews--pointer --socialIcons">
+					</div>
+				</section>
+				<section class="stats">
+					<div class="stats__list">
+						<div class="stats__item">
+							<h2>450+</h2>
+							<div class="body-LG">Cars For Rent</div>
+						</div>
+						<div class="stats__item">
+							<h2>800+</h2>
+							<div class="body-LG">Happy Clients</div>
+						</div>
+						<div class="stats__item">
+							<h2>750+</h2>
+							<div class="body-LG">Rental Locations</div>
+						</div>
+					</div>
+				</section>
+				<section class="contactUs" id="contacts">
+					<h2 class="title">Contact Us</h2>
+					<div class="contactUs__content">
+						<form action="">
 							<input type="text" name="name" required minlength="1" maxlength="16" placeholder="Your Name*"/>
 							<input type="text" name="email" required minlength="1" maxlength="16" placeholder="Your Email*"/>
 							<textarea name="message" required minlength="1" maxlength="512" placeholder="Your Message*"></textarea>
-						</div>
-						<button class="button-XL">Send A Message</button>
-					</form>
-					<img src="img/contactUs/contact.jpg" alt="Contact">
+							<button class="button-XL">Send A Message</button>
+						</form>
+						<img src="img/contactUs/contact.jpg" alt="Contact">
+					</div>
+				</section>
+			</main>
+			<footer class="footer">
+				<div class="footer__contacts">
+					<div class="body-MD-regular">Need help renting a car? Please call</div>
+					<div class="body-MD-regular">+1-333-444-5555</div>
 				</div>
-			</section>
-		</main>
-		<footer class="footer">
-			<div class="footer__contacts">
-				<div class="body-MD-regular">Need help renting a car? Please call</div>
-				<div class="body-MD-regular">+1-333-444-5555</div>
-			</div>
-			<div class="footer__menu">
-				<a href="#home"><h3 class="logoTitle">CARENT</h3></a>
-				<div class="footer__social">
-					<img src="img/facebook.png" class="--socialIcons">
-					<img src="img/instagram.png" class="--socialIcons">
-					<img src="img/twitter.png" class="--socialIcons">
-					<img src="img/telegram.png" class="--socialIcons">
-					<img src="img/viber.png" class="--socialIcons">
+				<div class="footer__menu">
+					<a href="#home"><h3 class="logoTitle">CARENT</h3></a>
+					<div class="footer__social">
+						<img src="img/facebook.png" class="--socialIcons">
+						<img src="img/instagram.png" class="--socialIcons">
+						<img src="img/twitter.png" class="--socialIcons">
+						<img src="img/telegram.png" class="--socialIcons">
+						<img src="img/viber.png" class="--socialIcons">
+					</div>
 				</div>
-			</div>
-		</footer>
+			</footer>
+		</div>
 	</body>
 </html>

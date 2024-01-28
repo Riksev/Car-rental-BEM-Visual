@@ -87,6 +87,12 @@ ul {
 h1 {
 	@extend %font-style-headings;
 	font-size: 3rem;
+	@media (max-width: 768px) {
+		font-size: 2rem;
+	}
+	@media (max-width: 560px) {
+		font-size: 1.75rem;
+	}
 	line-height: normal;
 	font-weight: 800;
 }
@@ -94,6 +100,12 @@ h1 {
 h2 {
 	@extend %font-style-headings;
 	font-size: 2rem;
+	@media (max-width: 768px) {
+		font-size: 1.75rem;
+	}
+	@media (max-width: 560px) {
+		font-size: 1.5rem;
+	}
 	line-height: normal;
 	font-weight: 500;
 }
@@ -120,6 +132,10 @@ h1, h2, h3, h4 {
 	@extend %font-style-body;
 	font-size: 1.5rem;
 	line-height: 2.5rem;
+	@media (max-width: 560px) {
+		font-size: 1.25rem;
+		line-height: 1.5rem;
+	}
 	font-weight: 500;
 }
 
@@ -140,6 +156,9 @@ h1, h2, h3, h4 {
 .body-MD-medium {
 	@extend %font-style-body;
 	font-size: 1.125rem;
+	@media (max-width: 560px) {
+		font-size: 1rem;
+	}
 	line-height: normal;
 	font-weight: 500;
 }
@@ -200,15 +219,19 @@ h1, h2, h3, h4 {
 }
 
 body {
-	@extend %column-flex;
-	position: relative;
 	overflow-x: hidden;
+	display: flex;
+	justify-content: center;
 }
 
-header {
-	@extend %row-flex;
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	width: 89.375rem;
-	position: relative;
+	@media (max-width: 1440px) {
+		max-width: 100%;
+	}
 }
 
 @keyframes rectangle-anim {
@@ -220,26 +243,25 @@ header {
 	}
 }
 
-.header {
+header {
 	@extend %row-flex;
 	justify-content: space-between;
-	width: 70rem;
-	padding-top: 2rem;
+	width: 80%;
+	padding-top: 3.3vh;
+	@media (max-width: 1440px) {
+		max-width: 100%;
+	}
 	nav {
 		@extend %row-flex;
-		justify-content: space-between;
+		justify-content: flex-end;
 		width: 40.1875rem;
+		@media (max-width: 1440px) {
+			max-width: 57.5%;
+		}
 		button {
 			width: 9.125rem;
 			height: 2.5rem;
 		}
-	}
-	&__menu {
-		@extend %row-flex;
-		justify-content: flex-start;
-		gap: 2rem;
-		flex: 1 0 0;
-		width: 100%;
 	}
 	&:after {
 		content: '';
@@ -252,16 +274,158 @@ header {
 		animation-name: rectangle-anim;
 		animation-duration: 1s;
 		animation-fill-mode: forwards;
+		@media (max-width: 1200px) {
+			max-width: 40.1875rem;
+		}
+		@media (max-width: 992px) {
+			min-width: 57.5%;
+		}
+		@media (max-width: 767px) {
+			min-width: 100%;
+		}
+	}
+}
+
+@keyframes menu-anim {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 0.9;
+	}
+}
+
+.header {
+	&__menu {
+		@extend %row-flex;
+		justify-content: flex-start;
+	}
+	&__horizontalMenu a {
+		margin-right: 2rem;
+		@media (max-width: 1300px) {
+			margin-right: 0.5rem;
+		}
+	}
+	&__horizontalMenu {
+		@extend %row-flex;
+		justify-content: space-between;
+		width: 100%;
+		@media (max-width: 992px) {
+			display: none;
+		}
+	}
+	&__verticalMenu {
+		display: none;
+		position: fixed;
+		left: 25%;
+		top: 10%;
+		width: 100vw;
+		height: 50vh;
+		z-index: 1001;
+		animation-name: menu-anim;
+		animation-duration: 1s;
+		animation-fill-mode: forwards;
+		a, button {
+			z-index: inherit;
+			color: $white-2-color;
+		}
+		a {
+			margin-right: 0px;
+			margin-bottom: 3rem;
+			transition: all 0.5s ease 0s;
+			&:hover {
+				color: $primary-color;
+				transition: all 0.5s ease 0s;
+			}
+		}
+		&::after {
+			content: '';
+			position: fixed;
+			z-index: 1000;
+			top: 0px;
+			left: 0px;
+			width: 100vw;
+			height: 100vh;
+			background: rgba(0, 0, 0, 0.85);
+		}
+	}
+	&--openMenu {
+		display: inline-flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	&__burger {
+		@extend %row-flex;
+		justify-content: flex-end;
+		position: relative;
+		width: 40px;
+		height: 40px;
+		display: none;
+		z-index: 1001;
+		transition: all 0.5s ease 0s;
+		@media (max-width: 992px) {
+			display: inline-flex;
+		}
+		span {
+			content: '';
+			height: 2px;
+			width: 100%;
+			transform: scale(1);
+			background-color: #000;
+			@media (max-width: 768px) {
+				background-color: $white-2-color;
+			}
+			transition: all 0.5s ease 0s;
+		}
+		&::before, &::after {
+			content: '';
+			position: absolute;
+			height: 2px;
+			width: 100%;
+			background-color: #000;
+			@media (max-width: 768px) {
+				background-color: $white-2-color;
+			}
+			transition: all 1s ease 0s;
+		}
+		&::before { 
+			top: 15%;
+		}
+		&::after {
+			bottom: 15%;
+		}
+		&:hover {
+			cursor: pointer;
+		}
+		&:hover::after, &:hover::before, &:hover span{
+			background-color: $primary-color;
+		}
+	}
+	&--active {
+		span {
+			transform: scale(0);
+		}
+		&::before {
+			top: 50%;
+			transform: rotate(-45deg) translate(0, -70%);
+		}
+		&::after {
+			bottom: 50%;
+			transform: rotate(45deg) translate(0, 70%);
+		}
+		&::before, &::after {
+			background-color: $white-2-color;
+		}
 	}
 }
 
 main {
 	@extend %column-flex;
 	gap: 5rem;
-	width: 89.375rem;
+	width: 80%;
 }
 
-@keyframes img-car {
+@keyframes img-car-landscape {
 	0%{
 		right: -10rem;
 	}
@@ -270,9 +434,19 @@ main {
 	}
 }
 
+@keyframes img-car-portrait {
+	0%{
+		left: 10rem;
+	}
+	100%{
+		left: 0rem;
+	}
+}
+
 .hero {
 	display: inline-flex;
 	flex-direction: row;
+	margin-top: 2rem;
 	width: 100%;
 	height: 46.375rem;
 	position: relative;
@@ -280,26 +454,28 @@ main {
 		position: absolute;
 		width: 56.8125rem;
 		height: 34.0625rem;
-		top: 2rem;
 		transition-duration: 1s;
 		&:hover {
 			width: 58rem;
 			height: 36rem;
 			transition-duration: 1s;
 		}
-		animation-name: img-car;
+		animation-name: img-car-landscape;
+		@media (max-width: 992px) {
+			animation-name: img-car-portrait;
+		}
 		animation-duration: 1s;
 		animation-fill-mode: forwards;
 	}
 	&__content {
 		@extend %column-flex;
 		align-items: flex-start;
-		position: absolute;
-		left: 10rem;
-		top: 4.81rem;
+		margin-top: 2.8rem;
 		width: 33rem;
+		height: 27rem;
 		padding: 2rem 2rem 2rem 0rem;
 		gap: 3rem;
+		z-index: 1;
 		background: rgba(black, 0.15);
 		&__frame {
 			@extend %column-flex;
@@ -320,23 +496,39 @@ main {
 	&__social {
 		@extend %column-flex;
 		position: absolute;
-		left: 4.5rem;
+		left: -4.5rem;
 		top: 11.31rem;
 		gap: 1rem;
+		@media (max-width: 992px) {
+			flex-direction: row;
+			bottom: -15rem;
+			left: 0px;
+		}
 		&__content {
 			@extend %column-flex;
 			align-items: center;
 			gap: 0.75rem;
+			@media (max-width: 992px) {
+				flex-direction: row;
+			}
 		}
 		&:before, &:after {
 			content: '';
 			width: 0.0625rem;
 			height: 2.375rem;
+			@media (max-width: 992px) {
+				width: 2.375rem;
+				height: 0.0625rem;
+			}
 			background: $primary-color;
 		}
 		img {
 			width: 1rem;
 			height: 1rem;
+			@media (max-width: 992px) {
+				width: 30px;
+				height: 30px;
+			}
 		}
 		button {
 			background-color: transparent;
@@ -359,6 +551,7 @@ main {
 	align-items: flex-start;
 	gap: 0.5rem;
 	color: $title-color;
+	text-align: center;
 	animation-name: title-anim;
 	animation-duration: 2s;
 	&::after {
@@ -375,27 +568,33 @@ main {
 		height: 0rem;
 	}
 	100%{
-		width: 34.25rem;
-		height: 22.125rem;
+		width: 100%;
+		height: 100%;
 	}
 }
 
 .aboutUs {
 	@extend %column-flex;
-	width: 71rem;
+	width: 100%;
 	gap: 2.5rem;
 	&__content {
 		@extend %row-flex;
 		align-self: stretch;
 		gap: 2rem;
+		@media (max-width: 1200px) {
+			flex-direction: column;
+		}
 	}
 	&__textBlock {
 		@extend %column-flex;
 		align-items: flex-start;
+		width: 100%;
 		gap: 1.5rem;
 	}
 	img {
 		border-radius: 0.25rem;
+		max-width: 34.25rem;
+		max-height: 22.125rem;;
 		animation-name: img-aboutUs;
 		animation-duration: 1s;
 		animation-fill-mode: forwards;
@@ -407,11 +606,12 @@ main {
 
 .booking {
 	@extend %column-flex;
+	width: 100vw;
 	gap: 2.5rem;
 	form {
 		@extend %column-flex;
-		width: 89.9375rem;
-		height: 18.625rem;
+		width: 100%;
+		height: fit-content;
 		gap: 2rem;
 		background: $tint-color;
 		.row1, .row2 {
@@ -436,6 +636,14 @@ main {
 	&__content {
 		@extend %row-flex;
 		gap: 2.5rem;
+		margin-bottom: 2.5rem;
+		@media (max-width: 1200px) {
+			flex-direction: column;
+		}
+		&:first-child {
+			margin-top: 2.5rem;
+			margin-bottom: 0rem;
+		}
 	}
 	&__item {
 		@extend %row-flex;
@@ -447,14 +655,17 @@ main {
 .featuredCars {
 	@extend %column-flex;
 	justify-content: flex-start;
-	width: 70rem;
-	height: 35rem;
+	width: 100%;
+	height: fit-content;
 	gap: 2.5rem;
 	&__list {
 		@extend %row-flex;
 		gap: 1.5rem;
 		width: 100%;
-		height: 75%;
+		height: fit-content;
+		@media (max-width: 1200px) {
+			flex-direction: column;
+		}
 	}
 	&__item {
 		@extend %column-flex;
@@ -508,12 +719,17 @@ main {
 		@extend %row-flex;
 		align-items: flex-start;
 		gap: 0.5rem;
+		@media (max-width: 1200px) {
+			display: none;
+		}
 	}
 }
 
 .services {
 	@extend %column-flex;
 	position: relative;
+	width: 100%;
+	height: fit-content;
 	&::before {
 		content: '';
 		position: absolute;
@@ -527,7 +743,7 @@ main {
 		margin-top: 2.88rem;
 	}
 	.body-MD-medium {
-		width: 33rem;
+		max-width: 33rem;
 		color: rgba($white-color, 0.85);
 		font-weight: 400;
 		margin-top: 1.5rem;
@@ -548,9 +764,13 @@ main {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		column-gap: 3.5rem;
-		width: 59rem;
+		row-gap: 3.5rem;
+		max-width: 59rem;
 		margin-top: 2.5rem;
-		
+		@media (max-width: 768px) {
+			grid-template-columns: 1fr;
+			grid-template-rows: repeat(3, 1fr);
+		}
 	}
 	&__item {
 		@extend %column-flex;
@@ -559,6 +779,7 @@ main {
 		gap: 1.125rem;
 		border-radius: 0.25rem;
 		background: $white-color;
+		text-align: center;
 		box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.1);
 	}
 }
@@ -566,12 +787,17 @@ main {
 .reviews {
 	@extend %column-flex;
 	gap: 2.5rem;
+	width: 100%;
+	height: fit-content;
 	&--pointer{
 		cursor: pointer;
 	}
 	&--resize {
 		width: 4rem;
 		height: 4rem;
+		@media (max-width: 1200px) {
+			display: none;
+		}
 	}
 	&--flip {
 		transform: scaleX(-1);
@@ -583,17 +809,20 @@ main {
 	&__list {
 		@extend %row-flex;
 		gap: 1.5rem;
+		@media (max-width: 1200px) {
+			flex-direction: column;
+		}
 	}
 	&__item {
 		@extend %column-flex;
-		width: 28.3125rem;
-		height: 26.0625rem;
+		max-width: 422px;
+		min-height: 420px;
 		gap: 1.5rem;
 		border-radius: 0.25rem;
 		border: 1px solid $borders-color;
 		.body-MD-regular {
 			text-align: center;
-			width: 25rem;
+			width: 100%;
 		}
 		img {
 			cursor: default;
@@ -604,10 +833,17 @@ main {
 .stats {
 	@extend %row-flex;
 	align-items: stretch;
-	width: 100%;
+	width: 100vw;
 	padding: 4rem 0rem;
-	gap: 10rem;
 	background: $tint-color;
+	&__list {
+		@extend %row-flex;
+		width: 80%;
+		gap: 10rem;
+		@media (max-width: 768px) {
+			flex-direction: column;
+		}
+	}
 	h2 {
 		font-size: 2.5rem;
 	}
@@ -618,48 +854,57 @@ main {
 
 .contactUs {
 	@extend %column-flex;
+	width: 100%;
 	gap: 2.5rem;
 	&__content {
 		@extend %row-flex;
+		@media (max-width: 1200px) {
+			flex-direction: column;
+		}
 		padding: 2.5rem 3.5rem;
+		width: 100%;
 		gap: 5.4375rem;
 		border-radius: 0.25rem;
 		background: $white-color;
 		box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.05);
 		form {
 			@extend %column-flex;
-			align-items: flex-start;
-			gap: 2.5rem;
+			align-items: center;
+			width: 100%;
+			gap: 1.5rem;
 			button {
 				width: 16rem;
 				padding: 0.75rem 1.5rem;
+				margin-right: 11.3125rem;
+				@media (max-width: 1200px) {
+					margin-right: 0rem;
+				}
 			}
-		}
-	}
-	&__inputs {
-		@extend %column-flex;
-		gap: 1.5rem;
-		input, textarea {
-			width: 25.3125rem;
-			height: 3.75rem;
-			padding: 0.5rem 1rem;
-			border-radius: 0.25rem;
-			border: 1px solid $borders-color;
-			background: $background-color;
-		}
-		textarea {
-			position: relative;
-			height: 7.625rem;
+			input, textarea {
+				max-width: 25.3125rem;
+				width: 100%;
+				height: 3.75rem;
+				padding: 0.5rem 1rem;
+				border-radius: 0.25rem;
+				border: 1px solid $borders-color;
+				background: $background-color;
+			}
+			textarea {
+				position: relative;
+				height: 7.625rem;
+			}
 		}
 	}
 	&::after {
 		content: '';
 		position: absolute;
-		left: 15rem;
 		margin-top: 36rem;
 		z-index: -1;
-		width: 90rem;
-		height: 32.75rem;
+		width: 100vw;
+		height: 60vh;
+		@media (max-width: 1200px) {
+			height: 120vh;
+		}
 		background: $title-color;
 	}
 }
@@ -672,6 +917,10 @@ main {
 	&__contacts {
 		@extend %row-flex;
 		gap: 0.5rem;
+		text-align: center;
+		@media (max-width: 565px) {
+			flex-direction: column;
+		}
 	}
 	.body-MD-regular:nth-child(1) {
 		color: $white-color;
@@ -682,7 +931,7 @@ main {
 	&__menu {
 		@extend %row-flex;
 		justify-content: space-between;
-		width: 69.875rem;
+		width: 80%;
 	}
 	&__social {
 		@extend %row-flex;
