@@ -678,25 +678,28 @@ main {
 		border: 1px solid $borders-color;
 		background: $white-color;
 		img {
-			width: 19.96875rem;
-			height: 11.4375rem;
+			width: 100%;
+			max-width: 19.96875rem;
+			max-height: 11.4375rem;
 			border-radius: 0.208rem;
 		}
 	}
 	&__content {
 		@extend %column-flex;
 		align-items: flex-start;
-		width: 19.6875rem;
+		width: 100%;
 		gap: 2.5rem;
 	}
 	&__information {
 		@extend %column-flex;
 		align-items: flex-start;
+		width: 100%;
 		gap: 0.75rem;
 	}
 	&__specs {
 		@extend %row-flex;
 		gap: 1rem;
+		width: 100%;
 	}
 	&__spec {
 		@extend %row-flex;
@@ -709,7 +712,7 @@ main {
 	&__book {
 		@extend %row-flex;
 		justify-content: space-between;
-		width: 19.6875rem;
+		width: 100%;
 		button {
 			width: 6.625rem;
 			height: 2.1875rem;
@@ -781,6 +784,9 @@ main {
 		background: $white-color;
 		text-align: center;
 		box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.1);
+		img {
+			max-width: 100%;
+		}
 	}
 }
 
@@ -902,8 +908,12 @@ main {
 		z-index: -1;
 		width: 100vw;
 		height: 60vh;
-		@media (max-width: 1200px), (orientation: portrait) {
+		@media (max-width: 1200px) {
 			margin-top: 50rem;
+			height: 100vh;
+		}
+		@media (orientation: portrait) {
+			margin-top: 60rem;
 			height: 100vh;
 		}
 		background: $title-color;

@@ -669,21 +669,24 @@ main {
   background: #ffffff;
 }
 .featuredCars__item img {
-  width: 19.96875rem;
-  height: 11.4375rem;
+  width: 100%;
+  max-width: 19.96875rem;
+  max-height: 11.4375rem;
   border-radius: 0.208rem;
 }
 .featuredCars__content {
   align-items: flex-start;
-  width: 19.6875rem;
+  width: 100%;
   gap: 2.5rem;
 }
 .featuredCars__information {
   align-items: flex-start;
+  width: 100%;
   gap: 0.75rem;
 }
 .featuredCars__specs {
   gap: 1rem;
+  width: 100%;
 }
 .featuredCars__spec {
   gap: 0.25rem;
@@ -694,7 +697,7 @@ main {
 }
 .featuredCars__book {
   justify-content: space-between;
-  width: 19.6875rem;
+  width: 100%;
 }
 .featuredCars__book button {
   width: 6.625rem;
@@ -767,6 +770,9 @@ main {
   background: #ffffff;
   text-align: center;
   box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.1);
+}
+.services__item img {
+  max-width: 100%;
 }
 
 .reviews {
@@ -891,9 +897,15 @@ main {
   height: 60vh;
   background: #141414;
 }
-@media (max-width: 1200px), (orientation: portrait) {
+@media (max-width: 1200px) {
   .contactUs::after {
     margin-top: 50rem;
+    height: 100vh;
+  }
+}
+@media (orientation: portrait) {
+  .contactUs::after {
+    margin-top: 60rem;
     height: 100vh;
   }
 }
